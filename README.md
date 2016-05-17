@@ -19,14 +19,9 @@ Configures the official Docker yum repository
 
 - yum
 
-## Attributes
-
-- `node['chef-yum-docker']['components']` - repository components to configure. Default to ['main']. Other options are experimental and testing. Component must be an array of strings even if only a single component.
-
 ## Usage
 
-Simply add `recipe[chef-yum-docker]` to a run list. Change the component if you want testing / experimental releases
-
+Simply add `recipe[chef-yum-docker]` to a run list.
 
 ## License & Authors
 

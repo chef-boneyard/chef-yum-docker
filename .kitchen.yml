@@ -11,6 +11,7 @@ platforms:
   - name: centos-6.7
   - name: centos-7.1
   - name: fedora-23
+    run_list: yum::dnf_yum_compat
 
 suites:
   - name: default

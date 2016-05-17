@@ -1,0 +1,17 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-6.7
+  - name: centos-7.1
+  - name: fedora-23
+
+suites:
+  - name: default
+    run_list: test::default

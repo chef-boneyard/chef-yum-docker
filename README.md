@@ -13,11 +13,11 @@ Configures the official Docker yum repository
 
 ### Chef
 
-- Chef 12+
+- Chef 12.1+
 
 ### Cookbooks
 
-- yum
+- compat_resource
 
 ## Usage
 

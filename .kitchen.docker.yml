@@ -27,9 +27,9 @@ platforms:
     intermediate_instructions:
       - RUN yum -y install lsof
 
-- name: fedora-latest
+- name: fedora-24
   driver:
-    image: fedora:latest
+    image: fedora:24
     pid_one_command: /usr/lib/systemd/systemd
     intermediate_instructions:
       - RUN dnf -y install yum

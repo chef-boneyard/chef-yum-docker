@@ -6,7 +6,7 @@ description 'Sets up the Docker yum repository'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '2.0.0'
 
-recipe 'chef-yum-docker::default', 'Sets up the Docker apt repository.'
+recipe 'chef-yum-docker::default', 'Sets up the Docker yum repository.'
 
 %w(centos redhat scientific oracle amazon fedora).each do |os|
   supports os

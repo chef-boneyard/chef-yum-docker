@@ -17,20 +17,10 @@
 # limitations under the License.
 #
 
-docker_repo_url = case node['platform']
-                  when 'amazon'
-                    'https://yum.dockerproject.org/repo/main/centos/6/'
-                  when 'oracle'
-                    "https://yum.dockerproject.org/repo/main/oraclelinux/#{node['platform_version'].to_i}/"
-                  when 'fedora'
-                    "https://yum.dockerproject.org/repo/main/fedora/#{node['platform_version'].to_i}/"
-                  else
-                    "https://yum.dockerproject.org/repo/main/centos/#{node['platform_version'].to_i}/"
-                  end
-
-yum_repository 'dockerrepo' do
-  description 'Docker Respository'
-  baseurl docker_repo_url
-  gpgkey 'https://yum.dockerproject.org/gpg'
+yum_repository 'docker' do
+  node['yum']['docker'].each do |config, value|
+    next if config == 'managed'
+    send(config.to_sym, value) unless value.nil?
+  end
   action :create
-end
+end if node['yum']['docker']['managed']

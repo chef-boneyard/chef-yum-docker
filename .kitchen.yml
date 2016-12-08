@@ -10,7 +10,7 @@ verifier:
 platforms:
   - name: centos-6.8
   - name: centos-7.2
-  - name: fedora-24
+  - name: fedora-25
     run_list: yum::dnf_yum_compat
 
 suites:

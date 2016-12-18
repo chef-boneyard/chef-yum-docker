@@ -19,8 +19,6 @@
 
 yum_repository 'docker' do
   node['yum']['docker'].each do |config, value|
-    next if config == 'managed'
-    send(config.to_sym, value) unless value.nil?
+    send(config.to_sym, value) unless value.nil? || config == 'managed'
   end
-  action :create
 end if node['yum']['docker']['managed']

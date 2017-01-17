@@ -12,7 +12,7 @@ recipe 'chef-yum-docker::default', 'Sets up the Docker yum repository.'
   supports os
 end
 
-depends 'compat_resource', '>= 12.14.6'
+depends 'compat_resource', '>= 12.16.3'
 
 source_url 'https://github.com/chef-cookbooks/chef-yum-docker'
 issues_url 'https://github.com/chef-cookbooks/chef-yum-docker/issues'

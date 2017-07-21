@@ -8,12 +8,10 @@ version '2.1.0'
 
 recipe 'chef-yum-docker::default', 'Sets up the Docker yum repository.'
 
-%w(centos redhat scientific oracle amazon fedora).each do |os|
+%w(centos redhat scientific fedora).each do |os|
   supports os
 end
 
-depends 'compat_resource', '>= 12.16.3'
-
 source_url 'https://github.com/chef-cookbooks/chef-yum-docker'
 issues_url 'https://github.com/chef-cookbooks/chef-yum-docker/issues'
-chef_version '>= 12.1'
+chef_version '>= 12.5' if respond_to?(:chef_version)

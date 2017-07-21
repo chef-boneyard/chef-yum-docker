@@ -17,8 +17,14 @@
 # limitations under the License.
 #
 
-yum_repository 'docker' do
-  node['yum']['docker'].each do |config, value|
-    send(config.to_sym, value) unless value.nil? || config == 'managed'
-  end
-end if node['yum']['docker']['managed']
+%w(
+  docker-stable
+  docker-edge
+  docker-test
+).each do |repo|
+  yum_repository repo do
+    node['yum'][repo].each do |config, value|
+      send(config.to_sym, value) unless value.nil? || config == 'managed'
+    end
+  end if node['yum'][repo]['managed']
+end

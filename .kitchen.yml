@@ -1,17 +1,27 @@
 driver:
-  name: vagrant
+  name: dokken
+  chef_version: current
+
+transport:
+  name: dokken
 
 provisioner:
-  name: chef_zero
+  name: dokken
   deprecations_as_errors: true
 
 verifier:
   name: inspec
 
 platforms:
-  - name: centos-6.9
-  - name: centos-7.3
+  - name: centos-7
+    driver:
+      image: dokken/centos-7
+  - name: fedora-24
+    driver:
+      image: dokken/fedora-24
   - name: fedora-25
+    driver:
+      image: dokken/fedora-25
 
 suites:
   - name: default

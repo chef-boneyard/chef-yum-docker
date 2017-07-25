@@ -17,7 +17,7 @@ Configures the official Docker yum repository
 
 ### Cookbooks
 
-- compat_resource
+- none
 
 ## Usage
 

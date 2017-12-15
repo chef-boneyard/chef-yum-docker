@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the chef-apt-docker cookbook.
 
+## 3.1.0 (2017-12-15)
+
+- Add Oracle to the metadata
+- Throw a warning if not on RHEL 7+ / Fedora instead of potentially failing (like we did on Amazon Linux)
+
 ## 3.0.0 (2017-07-25)
 
 - Require Chef 12.14+ for yum_repository and remove depedency on compat_resource

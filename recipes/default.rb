@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-if platform_family?('rhel') && node['platform_version'].to_i >= 7
+if platform_family?('rhel', 'fedora') && node['platform_version'].to_i >= 7
   %w(
     docker-stable
     docker-edge

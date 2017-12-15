@@ -2,13 +2,13 @@
 
 [![Build Status](https://travis-ci.org/chef-cookbooks/chef-yum-docker.svg?branch=master)](https://travis-ci.org/chef-cookbooks/chef-yum-docker) [![Cookbook Version](https://img.shields.io/cookbook/v/chef-yum-docker.svg)](https://supermarket.chef.io/cookbooks/chef-yum-docker)
 
-Configures the official Docker yum repository
+Configures the official Docker yum repositories
 
 ## Requirements
 
 ### Platforms
 
-- RHEL and derivatives
+- RHEL (and derivatives) 7+
 - Fedora
 
 ### Chef

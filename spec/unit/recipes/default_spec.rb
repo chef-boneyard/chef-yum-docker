@@ -1,7 +1,37 @@
 require 'spec_helper'
 
 describe 'chef-yum-docker::default' do
-  context 'default attributes' do
+  context 'default attributes on Amazon Linux' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(platform: 'amazon', version: '2017.09').converge(described_recipe)
+    end
+
+    it 'warns that this platform is not suppored' do
+      expect(chef_run).to write_log('The chef-yum-docker cookbook only supports RHEL 7+ and Fedora! Skipping.')
+    end
+  end
+
+  context 'default attributes on CentOS 6' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(platform: 'centos', version: '6.9').converge(described_recipe)
+    end
+
+    it 'warns that this platform is not suppored' do
+      expect(chef_run).to write_log('The chef-yum-docker cookbook only supports RHEL 7+ and Fedora! Skipping.')
+    end
+  end
+
+  context 'default attributes on Ubuntu 16.04' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '16.04').converge(described_recipe)
+    end
+
+    it 'warns that this platform is not suppored' do
+      expect(chef_run).to write_log('The chef-yum-docker cookbook only supports RHEL 7+ and Fedora! Skipping.')
+    end
+  end
+
+  context 'default attributes on CentOS 7' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new(platform: 'centos', version: '7.3.1611').converge(described_recipe)
     end

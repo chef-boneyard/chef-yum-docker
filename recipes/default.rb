@@ -17,14 +17,20 @@
 # limitations under the License.
 #
 
-%w(
-  docker-stable
-  docker-edge
-  docker-test
-).each do |repo|
-  yum_repository repo do
-    node['yum'][repo].each do |config, value|
-      send(config.to_sym, value) unless value.nil? || config == 'managed'
-    end
-  end if node['yum'][repo]['managed']
+if platform_family?('rhel') && node['platform_version'].to_i >= 7
+  %w(
+    docker-stable
+    docker-edge
+    docker-test
+  ).each do |repo|
+    yum_repository repo do
+      node['yum'][repo].each do |config, value|
+        send(config.to_sym, value) unless value.nil? || config == 'managed'
+      end
+    end if node['yum'][repo]['managed']
+  end
+else
+  log 'The chef-yum-docker cookbook only supports RHEL 7+ and Fedora! Skipping.' do
+    level :warn
+  end
 end

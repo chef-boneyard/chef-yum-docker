@@ -8,7 +8,7 @@ version '3.0.0'
 
 recipe 'chef-yum-docker::default', 'Sets up the Docker yum repository.'
 
-%w(centos redhat scientific fedora).each do |os|
+%w(centos redhat scientific oracle fedora).each do |os|
   supports os
 end
 

@@ -17,9 +17,9 @@ platforms:
   - name: centos-7
     driver:
       image: dokken/centos-7
-  - name: fedora-25
+  - name: fedora-26
     driver:
-      image: dokken/fedora-25
+      image: dokken/fedora-26
 
 suites:
   - name: default

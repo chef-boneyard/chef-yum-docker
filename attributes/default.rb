@@ -1,12 +1,10 @@
-base_url = case node['platform']
-           when 'fedora'
+base_url = if platform?('fedora')
              "https://download.docker.com/linux/fedora/#{node['platform_version'].to_i}/x86_64"
            else
              "https://download.docker.com/linux/centos/#{node['platform_version'].to_i}/x86_64"
            end
 
-gpg_key = case node['platform']
-          when 'fedora'
+gpg_key = if platform?('fedora')
             'https://download.docker.com/linux/fedora/gpg'
           else
             'https://download.docker.com/linux/centos/gpg'

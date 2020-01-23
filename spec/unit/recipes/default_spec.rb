@@ -33,7 +33,7 @@ describe 'chef-yum-docker::default' do
 
   context 'default attributes on Fedora' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'fedora', version: '26').converge(described_recipe)
+      ChefSpec::ServerRunner.new(platform: 'fedora', version: '30').converge(described_recipe)
     end
 
     it 'creates the yum repo docker-stable' do
@@ -51,7 +51,7 @@ describe 'chef-yum-docker::default' do
 
   context 'default attributes on CentOS 7' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'centos', version: '7.3.1611').converge(described_recipe)
+      ChefSpec::ServerRunner.new(platform: 'centos', version: '7').converge(described_recipe)
     end
 
     it 'creates the yum repo docker-stable' do
@@ -69,7 +69,7 @@ describe 'chef-yum-docker::default' do
 
   context 'managed attribute set to false' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'centos', version: '7.3.1611') do |node|
+      ChefSpec::ServerRunner.new(platform: 'centos', version: '7') do |node|
         node.override['yum']['docker-test']['managed'] = false
       end.converge(described_recipe)
     end

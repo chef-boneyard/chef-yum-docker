@@ -33,7 +33,7 @@ describe 'chef-yum-docker::default' do
 
   context 'default attributes on Fedora' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'fedora', version: '30').converge(described_recipe)
+      ChefSpec::ServerRunner.new(platform: 'fedora', version: '31').converge(described_recipe)
     end
 
     it 'creates the yum repo docker-stable' do

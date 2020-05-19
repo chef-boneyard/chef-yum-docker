@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the chef-apt-docker cookbook.
 
+## Unreleased
+
+- resolved cookstyle error: spec/unit/recipes/default_spec.rb:36:7 warning: `ChefDeprecations/DeprecatedChefSpecPlatform`
+
 ## 3.1.1 (2017-12-15)
 
 - Fix repos not being setup on Fedora

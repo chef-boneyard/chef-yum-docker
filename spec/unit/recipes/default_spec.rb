@@ -13,7 +13,7 @@ describe 'chef-yum-docker::default' do
 
   context 'default attributes on CentOS 6' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'centos', version: '6.9').converge(described_recipe)
+      ChefSpec::ServerRunner.new(platform: 'centos', version: '6').converge(described_recipe)
     end
 
     it 'warns that this platform is not suppored' do
